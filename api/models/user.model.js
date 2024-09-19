@@ -8,7 +8,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        surname: {
+        lastName: {
             type: String,
             required: true,
         },
@@ -61,7 +61,7 @@ const userSchema = new Schema(
     }
 )
 
-schema.virtual('accounts', {
+userSchema.virtual('accounts', {
     ref: 'Account', 
     localField: '_id', 
     foreignField: 'owner', 
